@@ -6,9 +6,7 @@ import reactRefresh from '@vitejs/plugin-react-refresh';
 export default defineConfig({
   plugins: [react(), reactRefresh()],
   css: {
-    modules: {
-      localsConvention: 'camelCaseOnly',
-    },
+    modules: true,
     preprocessorOptions: {
       scss: {
         additionalData: `@use "@/src/App.sass" as *;`,
