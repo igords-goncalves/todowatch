@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <div className="card">
-        <Timer hours="00" minutes="00" seconds="00" />
+        <Timer />
         <Form label="Task" placeHolder="Enter your task here ..." />
         <List />
       </div>
