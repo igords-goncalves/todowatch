@@ -9,6 +9,7 @@ import play from '../../assets/play.svg';
 import pause from '../../assets/pause.svg';
 import stop from '../../assets/stop.svg';
 import { Button } from '../Button';
+import { handleStopBtn } from './utils/handleStopBtn';
 
 export const Timer: React.FC = () => {
   const [hours, setHours] = useState(0);
@@ -34,7 +35,7 @@ export const Timer: React.FC = () => {
         </span>
       </div>
       <div className="c-card">
-        <Form label="Task" placeHolder="Enter your task here ..." />
+        <Form label="Tarefa" placeHolder="Digite sua tarefa." />
         <div className={styles['c-card__btn']}>
           <Button
             label={label}
@@ -46,9 +47,14 @@ export const Timer: React.FC = () => {
           <Button
             label={stop}
             onClick={() => {
-              setSeconds(0);
-              setMinutes(0);
-              setHours(0);
+              handleStopBtn({
+                setIsRunning,
+                setLabel,
+                setSeconds,
+                setMinutes,
+                setHours,
+                play,
+              });
             }}
           />
         </div>
