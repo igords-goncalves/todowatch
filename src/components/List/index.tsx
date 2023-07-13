@@ -5,11 +5,11 @@ export const List: React.FC = () => {
   const tasks = [
     {
       time: '00:00:00',
-      task: 'This is a task example',
+      task: 'Estudar design e ui/ux',
     },
     {
       time: '00:10:00',
-      task: 'This is a task example',
+      task: 'Terminar os projetos',
     },
   ];
 
