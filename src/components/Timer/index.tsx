@@ -7,6 +7,7 @@ import { Form } from '../Form';
 import { List } from '../List';
 import play from '../../assets/play.svg';
 import pause from '../../assets/pause.svg';
+import stop from '../../assets/stop.svg';
 import { Button } from '../Button';
 
 export const Timer: React.FC = () => {
@@ -32,15 +33,25 @@ export const Timer: React.FC = () => {
           {insertZero(seconds)}
         </span>
       </div>
-      <div className="card">
+      <div className="c-card">
         <Form label="Task" placeHolder="Enter your task here ..." />
-        <Button
-          label={label}
-          onClick={() => {
-            isRunning ? setLabel(play) : setLabel(pause);
-            handleTimer(setIsRunning);
-          }}
-        />
+        <div className={styles['c-card__btn']}>
+          <Button
+            label={label}
+            onClick={() => {
+              isRunning ? setLabel(play) : setLabel(pause);
+              handleTimer(setIsRunning);
+            }}
+          />
+          <Button
+            label={stop}
+            onClick={() => {
+              setSeconds(0);
+              setMinutes(0);
+              setHours(0);
+            }}
+          />
+        </div>
         <List />
       </div>
     </>
