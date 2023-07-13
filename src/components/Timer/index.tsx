@@ -17,6 +17,7 @@ export const Timer: React.FC = () => {
   const [seconds, setSeconds] = useState(50);
   const [isRunning, setIsRunning] = useState(false);
   const [label, setLabel] = useState(play);
+  //TODO: Pass hours, minutes and seconds to context or redux
 
   useEffect(
     () => startStopTimer({ setSeconds, setMinutes, setHours }, isRunning),
@@ -26,10 +27,12 @@ export const Timer: React.FC = () => {
   return (
     <>
       <div className={styles['c-timer']}>
-        <span className={styles['c-timer__hours']}>{insertZero(hours)}:</span>
+        <span className={styles['c-timer__hours']}>{insertZero(hours)}</span>
+        <span className={styles['c-timer__colon']}>:</span>
         <span className={styles['c-timer__minutes']}>
-          {insertZero(minutes)}:
+          {insertZero(minutes)}
         </span>
+        <span className={styles['c-timer__colon']}>:</span>
         <span className={styles['c-timer__seconds']}>
           {insertZero(seconds)}
         </span>

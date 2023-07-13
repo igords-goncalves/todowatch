@@ -16,6 +16,7 @@ export const List: React.FC = () => {
   return (
     <div className={styles['c-list']}>
       <ul className={styles['c-list__list']}>
+        {/* TODO: Use a table instead a list */}
         {tasks.map((item, index) => (
           <Tasks key={index} {...item} />
         ))}
