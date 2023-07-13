@@ -5,12 +5,12 @@ interface FormProps {
   children?: React.ReactNode;
 }
 
-export const Form: React.FC<FormProps> = ({ placeHolder }) => {
+export const Form: React.FC<FormProps> = ({ placeHolder, label }) => {
   return (
     <>
       <form className={styles['c-form']}>
         <div className={styles['c-form__task']}>
-          <label>Task</label>
+          <label>{label}</label>
           <input type="text" placeholder={placeHolder} />
         </div>
       </form>
