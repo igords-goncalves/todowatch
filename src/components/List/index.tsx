@@ -14,13 +14,21 @@ export const List: React.FC = () => {
   ];
 
   return (
-    <div className={styles['c-list']}>
-      <ul className={styles['c-list__list']}>
-        {/* TODO: Use a table instead a list */}
+    <div className={styles['c-table']}>
+      <table className={styles['c-table__list']}>
+        <thead className={styles['c-table__head']}>
+          <tr>
+            <th>
+              <span lang="en">Timer</span>
+            </th>
+            <th>Descrição</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
         {tasks.map((item, index) => (
           <Tasks key={index} {...item} />
         ))}
-      </ul>
+      </table>
     </div>
   );
 };
