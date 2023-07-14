@@ -1,13 +1,24 @@
 
+.c-header__title
+  text-align: center
+  text-transform: uppercase
+  letter-spacing: 3px
+  width: 100%
+  background-color: rgba(255, 255, 255, 0.3)
+  border-radius: 6px
+  padding: 0.4em 0
+  margin: 0 0 20px 0
+
 .c-timer
+  border-top: 2px dotted rgba(255, 255, 255, 0.4)
   display: flex
-  justify-content: space-between
   align-items: center
+  justify-content: space-between
 
   .c-timer__hours, .c-timer__minutes, .c-timer__seconds
-    text-align: center
+    display: flex
     width: 100%
-    font-size: 7em
+    font-size: 6.95em
     font-family: 'Orbitron', sans-serif
 
   .c-timer__colon
@@ -16,4 +27,4 @@
 .c-card__btn
   display: flex
   justify-content: space-between
-  gap: 10px
+  gap: 16px
