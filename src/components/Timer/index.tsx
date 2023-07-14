@@ -13,8 +13,8 @@ import { handleStopBtn } from './utils/handleStopBtn';
 
 export const Timer: React.FC = () => {
   const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(59);
-  const [seconds, setSeconds] = useState(50);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [label, setLabel] = useState(play);
   //TODO: Pass hours, minutes and seconds to context or redux
@@ -25,7 +25,10 @@ export const Timer: React.FC = () => {
   );
 
   return (
-    <>
+    <header className={styles['c-header']}>
+      <h1 className={styles['c-header__title']}>
+        Tarefas <span lang="en">Timer</span>
+      </h1>
       <div className={styles['c-timer']}>
         <span className={styles['c-timer__hours']}>{insertZero(hours)}</span>
         <span className={styles['c-timer__colon']}>:</span>
@@ -42,6 +45,7 @@ export const Timer: React.FC = () => {
         <div className={styles['c-card__btn']}>
           <Button
             label={label}
+            alt="Botão play e pause"
             onClick={() => {
               isRunning ? setLabel(play) : setLabel(pause);
               handleTimer(setIsRunning);
@@ -49,6 +53,7 @@ export const Timer: React.FC = () => {
           />
           <Button
             label={stop}
+            alt="Botão stop"
             onClick={() => {
               handleStopBtn({
                 setIsRunning,
@@ -63,6 +68,6 @@ export const Timer: React.FC = () => {
         </div>
         <List />
       </div>
-    </>
+    </header>
   );
 };
