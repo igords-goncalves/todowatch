@@ -6,18 +6,19 @@
     display: flex
     flex-direction: column
     align-items: flex-start
-    padding: 20px 0
+    padding: 10px 0 20px 0
+    border-top: 2px dotted rgba(255, 255, 255, 0.5)
 
   input
     width: 100%
     border-radius: 6px
     border: 1px solid transparent
-    padding: 0.6em 1.2em
+    padding: 0.6em 1em
     font-size: 1em
     font-weight: 500
     font-family: inherit
     background-color: rgba(255, 255, 255, 0.3)
-    color: #fc4671
+    color: #7746fc
     font-weight: 600
     font-size: 1.5em
 
@@ -25,6 +26,12 @@
       color: #e93ffb
       opacity: 0.5
       font-weight: normal
+
+    &:hover
+      border: 1px solid #7746fc
+
+    &:focus
+      outline: 1px solid #e93ffb
 
   label
     font-weight: normal
